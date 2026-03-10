@@ -351,49 +351,306 @@
             background: rgba(255, 50, 50, 0.2);
         }
 
-        /* ===== DUYURU BANNER ===== */
-        .announcement-banner {
-            background: linear-gradient(90deg, #1a1a2a, #2a2a3a, #1a1a2a);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 15px 30px;
-            border-radius: 60px;
-            margin: 20px 0 40px;
+        /* ===== KATEGORİLER ===== */
+        .categories-section {
+            margin: 40px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: #aaaaff;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            animation: bannerGlow 3s infinite;
         }
 
-        @keyframes bannerGlow {
-            0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
-            50% { box-shadow: 0 10px 40px rgba(100, 100, 255, 0.2); }
+        @media (max-width: 1000px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .announcement-text {
+        @media (max-width: 500px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .category-card {
+            background: rgba(15, 15, 25, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            background: rgba(25, 25, 35, 0.7);
+            border-color: #aaaaff;
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(170, 170, 255, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #aaaaff;
+            margin: 0 auto 15px;
+        }
+
+        .category-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .category-stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            color: #aaa;
+            font-size: 0.8rem;
+        }
+
+        /* ===== İÇERİK KATEGORİLERİ ===== */
+        .content-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 800px) {
+            .content-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .content-card {
+            background: rgba(15, 15, 25, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 25px;
+        }
+
+        .content-header {
             display: flex;
             align-items: center;
             gap: 15px;
+            margin-bottom: 20px;
         }
 
-        .announcement-text i {
+        .content-header i {
             font-size: 2rem;
             color: #aaaaff;
         }
 
-        .announcement-text h3 {
+        .content-header h3 {
             font-size: 1.3rem;
-            font-weight: 500;
         }
 
-        .announcement-tag {
-            background: rgba(170, 170, 255, 0.1);
-            border: 1px solid #aaaaff;
+        .content-list {
+            list-style: none;
+        }
+
+        .content-list li {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .content-list a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .content-list a:hover {
             color: #aaaaff;
-            padding: 5px 20px;
+        }
+
+        .content-list span {
+            color: #888;
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 8px;
             border-radius: 40px;
+        }
+
+        /* ===== LİNK GİRME ALANI ===== */
+        .link-section {
+            background: rgba(15, 15, 25, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 40px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .link-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .link-header i {
+            font-size: 2.5rem;
+            color: #aaaaff;
+        }
+
+        .link-header h2 {
+            font-size: 1.8rem;
+        }
+
+        .link-form {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .link-input {
+            flex: 1;
+            min-width: 250px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 60px;
+            padding: 15px 25px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .link-input:focus {
+            outline: none;
+            border-color: #aaaaff;
+        }
+
+        .link-select {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 60px;
+            padding: 15px 30px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .link-select option {
+            background: #1a1a2a;
+        }
+
+        .link-submit {
+            background: linear-gradient(135deg, #3a3a5a, #2a2a4a);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .link-submit:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(170, 170, 255, 0.3);
+        }
+
+        .link-info {
+            margin-top: 20px;
+            color: #888;
             font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ===== SON EKLENENLER ===== */
+        .recent-items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 1000px) {
+            .recent-items {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .recent-items {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .recent-item {
+            background: rgba(15, 15, 25, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+        }
+
+        .recent-item:hover {
+            background: rgba(25, 25, 35, 0.6);
+            border-color: #aaaaff;
+        }
+
+        .recent-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(170, 170, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaaaff;
+        }
+
+        .recent-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+
+        .recent-info p {
+            color: #888;
+            font-size: 0.75rem;
         }
 
         /* ===== OYUN KATEGORİLERİ ===== */
@@ -418,24 +675,6 @@
             padding: 30px;
             text-align: center;
             transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .game-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-
-        .game-card:hover::before {
-            opacity: 1;
         }
 
         .game-card:hover {
@@ -498,69 +737,6 @@
             transform: scale(1.05);
         }
 
-        /* ===== HİLE ÖZELLİKLERİ TABLOSU ===== */
-        .features-section {
-            margin: 60px 0;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .section-title span {
-            background: linear-gradient(135deg, #ffffff, #aaaaff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .feature-item {
-            background: rgba(15, 15, 25, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 25px;
-            padding: 25px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: all 0.3s;
-        }
-
-        .feature-item:hover {
-            background: rgba(25, 25, 35, 0.7);
-            border-color: rgba(170, 170, 255, 0.2);
-            transform: translateX(5px);
-        }
-
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(170, 170, 255, 0.1);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #aaaaff;
-        }
-
-        .feature-text h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .feature-text p {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
         /* ===== HİLE KARTLARI ===== */
         .cheats-grid {
             display: grid;
@@ -590,22 +766,6 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
-        }
-
-        .cheat-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #aaaaff, #ffffff, #aaaaff);
-            transform: translateX(-100%);
-            transition: transform 0.5s;
-        }
-
-        .cheat-card:hover::after {
-            transform: translateX(100%);
         }
 
         .cheat-card:hover {
@@ -746,18 +906,6 @@
             border-radius: 25px;
             padding: 25px;
             transition: all 0.3s;
-            animation: commentAppear 0.5s ease;
-        }
-
-        @keyframes commentAppear {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .comment-card:hover {
@@ -833,102 +981,6 @@
 
         .comment-likes i:hover {
             color: #ff4444;
-        }
-
-        /* ===== İSTATİSTİKLER ===== */
-        .stats-showcase {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin: 60px 0;
-            text-align: center;
-        }
-
-        @media (max-width: 800px) {
-            .stats-showcase {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .stat-card {
-            background: rgba(15, 15, 25, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 30px;
-            padding: 30px;
-        }
-
-        .stat-card i {
-            font-size: 2.5rem;
-            color: #aaaaff;
-            margin-bottom: 15px;
-        }
-
-        .stat-card .number {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        .stat-card .label {
-            color: #aaa;
-        }
-
-        /* ===== SON GÜNCELLEMELER ===== */
-        .updates-section {
-            background: rgba(10, 10, 20, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 40px;
-            padding: 40px;
-            margin: 50px 0;
-        }
-
-        .updates-list {
-            display: grid;
-            gap: 20px;
-        }
-
-        .update-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .update-item:last-child {
-            border-bottom: none;
-        }
-
-        .update-date {
-            background: rgba(170, 170, 255, 0.1);
-            color: #aaaaff;
-            padding: 5px 15px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .update-content {
-            flex: 1;
-        }
-
-        .update-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .update-desc {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        .update-game {
-            color: #aaaaff;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
         /* ===== DİSCORD SABİT İKON ===== */
@@ -1072,16 +1124,16 @@
                 </div>
                 <div class="logo-text">
                     <h1>RANGER YAZILIM</h1>
-                    <p>PREMIUM GAMING TOOLS</p>
+                    <p>TÜRKİYE'NİN EN BÜYÜK HİLE PLATFORMU</p>
                 </div>
             </div>
             <div class="header-stats">
                 <div class="stat-item">
-                    <div class="stat-value">45.2K+</div>
+                    <div class="stat-value">54.2K+</div>
                     <div class="stat-label">Kullanıcı</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">98%</div>
+                    <div class="stat-value">99%</div>
                     <div class="stat-label">Güvenli</div>
                 </div>
                 <div class="stat-item">
@@ -1098,7 +1150,8 @@
                 <a href="#" class="nav-link"><i class="fas fa-crosshairs"></i> Valorant</a>
                 <a href="#" class="nav-link"><i class="fas fa-robot"></i> Roblox</a>
                 <a href="#" class="nav-link"><i class="fas fa-bomb"></i> CS2</a>
-                <a href="#" class="nav-link"><i class="fas fa-ticket"></i> İlanlar</a>
+                <a href="#" class="nav-link"><i class="fas fa-shield-alt"></i> Fortnite</a>
+                <a href="#" class="nav-link"><i class="fas fa-skull"></i> PUBG</a>
                 <a href="#" class="nav-link"><i class="fas fa-headset"></i> Destek</a>
             </div>
             <div class="auth-buttons">
@@ -1131,25 +1184,119 @@
                         <div class="label">Yorum</div>
                     </div>
                     <div class="profile-stat">
-                        <div class="value" id="profileDays">15</div>
-                        <div class="label">Gün</div>
+                        <div class="value" id="profileLinks">8</div>
+                        <div class="label">Link</div>
                     </div>
                 </div>
             </div>
             <div class="profile-actions">
                 <button class="profile-action" onclick="changeAvatar()"><i class="fas fa-camera"></i> Avatar</button>
-                <button class="profile-action" onclick="alert('Profil ayarları açılıyor...')"><i class="fas fa-cog"></i> Ayarlar</button>
+                <button class="profile-action" onclick="showLinkModal()"><i class="fas fa-link"></i> Link Ekle</button>
                 <button class="profile-action logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Çıkış</button>
             </div>
         </div>
 
-        <!-- Duyuru Banner -->
-        <div class="announcement-banner">
-            <div class="announcement-text">
-                <i class="fas fa-bullhorn"></i>
-                <h3>🚀 CS2 HİLESİ YAYINDA! ÜCRETSİZ DENE</h3>
+        <!-- Kategoriler -->
+        <div class="categories-section">
+            <h2 class="section-title"><i class="fas fa-th-large"></i> POPÜLER KATEGORİLER</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterCategory('valorant')">
+                    <div class="category-icon"><i class="fas fa-crosshairs"></i></div>
+                    <h3>Valorant</h3>
+                    <p>24 hile • 15.2K indirme</p>
+                    <div class="category-stats">
+                        <span><i class="fas fa-star"></i> 4.8</span>
+                        <span><i class="fas fa-comment"></i> 342</span>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterCategory('roblox')">
+                    <div class="category-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Roblox</h3>
+                    <p>18 hile • 12.7K indirme</p>
+                    <div class="category-stats">
+                        <span><i class="fas fa-star"></i> 4.9</span>
+                        <span><i class="fas fa-comment"></i> 256</span>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterCategory('cs2')">
+                    <div class="category-icon"><i class="fas fa-bomb"></i></div>
+                    <h3>CS2</h3>
+                    <p>16 hile • 21.3K indirme</p>
+                    <div class="category-stats">
+                        <span><i class="fas fa-star"></i> 4.7</span>
+                        <span><i class="fas fa-comment"></i> 189</span>
+                    </div>
+                </div>
+                <div class="category-card" onclick="filterCategory('fortnite')">
+                    <div class="category-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Fortnite</h3>
+                    <p>12 hile • 9.8K indirme</p>
+                    <div class="category-stats">
+                        <span><i class="fas fa-star"></i> 4.6</span>
+                        <span><i class="fas fa-comment"></i> 145</span>
+                    </div>
+                </div>
             </div>
-            <span class="announcement-tag">YENİ</span>
+        </div>
+
+        <!-- Link Ekleme Alanı -->
+        <div class="link-section">
+            <div class="link-header">
+                <i class="fas fa-link"></i>
+                <h2>DOSYA LİNKİ EKLE</h2>
+            </div>
+            <div class="link-form">
+                <input type="text" class="link-input" id="linkUrl" placeholder="Dosya linkini girin (dosya.co, mediafire, google drive...)">
+                <select class="link-select" id="linkCategory">
+                    <option value="valorant">Valorant</option>
+                    <option value="roblox">Roblox</option>
+                    <option value="cs2">CS2</option>
+                    <option value="fortnite">Fortnite</option>
+                    <option value="pubg">PUBG</option>
+                    <option value="other">Diğer</option>
+                </select>
+                <button class="link-submit" onclick="addLink()"><i class="fas fa-upload"></i> LİNK EKLE</button>
+            </div>
+            <div class="link-info">
+                <i class="fas fa-info-circle"></i> Eklediğin linkler admin onayından sonra yayınlanır. Güvenilir linkler tercih edilir.
+            </div>
+        </div>
+
+        <!-- Son Eklenen Linkler -->
+        <h2 class="section-title"><i class="fas fa-clock"></i> SON EKLENEN LİNKLER</h2>
+        <div class="recent-items" id="recentLinks">
+            <!-- JavaScript ile doldurulacak -->
+        </div>
+
+        <!-- İçerik Kategorileri -->
+        <div class="content-categories">
+            <div class="content-card">
+                <div class="content-header">
+                    <i class="fas fa-crown"></i>
+                    <h3>PREMIUM HİLELER</h3>
+                </div>
+                <ul class="content-list" id="premiumList">
+                    <!-- JavaScript ile doldurulacak -->
+                </ul>
+            </div>
+            <div class="content-card">
+                <div class="content-header">
+                    <i class="fas fa-star"></i>
+                    <h3>POPÜLER HİLELER</h3>
+                </div>
+                <ul class="content-list" id="popularList">
+                    <!-- JavaScript ile doldurulacak -->
+                </ul>
+            </div>
+            <div class="content-card">
+                <div class="content-header">
+                    <i class="fas fa-bolt"></i>
+                    <h3>YENİ ÇIKANLAR</h3>
+                </div>
+                <ul class="content-list" id="newList">
+                    <!-- JavaScript ile doldurulacak -->
+                </ul>
+            </div>
         </div>
 
         <!-- Oyun Kategorileri -->
@@ -1192,57 +1339,8 @@
             </div>
         </div>
 
-        <!-- Hile Özellikleri -->
-        <div class="features-section">
-            <h2 class="section-title">TÜM <span>OYUNLARDA</span> ORTAK ÖZELLİKLER</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-crosshairs"></i></div>
-                    <div class="feature-text">
-                        <h4>Aimbot (Smooth/Rage)</h4>
-                        <p>Hassas nişan, FOV ayarı, rastgele atış</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-eye"></i></div>
-                    <div class="feature-text">
-                        <h4>ESP / Wallhack</h4>
-                        <p>Box, Skeleton, Health, Distance</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                    <div class="feature-text">
-                        <h4>Triggerbot</h4>
-                        <p>Otomatik ateş, reaksiyon süresi ayarı</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                    <div class="feature-text">
-                        <h4>Anti-Ban Koruması</h4>
-                        <p>Gelişmiş koruma, HWID spoofer</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    <div class="feature-text">
-                        <h4>Speed / Fly Hack</h4>
-                        <p>Hız, zıplama, uçma özellikleri</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-sun"></i></div>
-                    <div class="feature-text">
-                        <h4>Fullbright / X-Ray</h4>
-                        <p>Her yer aydınlık, duvar arkasını gör</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Hile Kartları -->
-        <h2 class="section-title">POPÜLER <span>HİLELER</span></h2>
+        <h2 class="section-title"><i class="fas fa-fire"></i> ÖNE ÇIKAN HİLELER</h2>
         <div class="cheats-grid">
             <!-- Valorant -->
             <div class="cheat-card">
@@ -1260,7 +1358,7 @@
                 </ul>
                 <div class="cheat-footer">
                     <span class="cheat-price">ÜCRETSİZ</span>
-                    <button class="cheat-download" onclick="alert('Valorant hilesi indiriliyor...')"><i class="fas fa-download"></i> İNDİR</button>
+                    <button class="cheat-download" onclick="downloadCheat('valorant')"><i class="fas fa-download"></i> İNDİR</button>
                 </div>
             </div>
 
@@ -1280,7 +1378,7 @@
                 </ul>
                 <div class="cheat-footer">
                     <span class="cheat-price">ÜCRETSİZ</span>
-                    <button class="cheat-download" onclick="alert('Roblox hilesi indiriliyor...')"><i class="fas fa-download"></i> İNDİR</button>
+                    <button class="cheat-download" onclick="downloadCheat('roblox')"><i class="fas fa-download"></i> İNDİR</button>
                 </div>
             </div>
 
@@ -1300,46 +1398,7 @@
                 </ul>
                 <div class="cheat-footer">
                     <span class="cheat-price">ÜCRETSİZ</span>
-                    <button class="cheat-download" onclick="alert('CS2 hilesi indiriliyor...')"><i class="fas fa-download"></i> İNDİR</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Son Güncellemeler -->
-        <div class="updates-section">
-            <h2 style="margin-bottom: 30px;">📢 SON GÜNCELLEMELER</h2>
-            <div class="updates-list">
-                <div class="update-item">
-                    <span class="update-date">2 saat önce</span>
-                    <div class="update-content">
-                        <div class="update-title">Valorant V4 Güncellendi</div>
-                        <div class="update-desc">Aimbot iyileştirmeleri, yeni ESP özellikleri eklendi.</div>
-                    </div>
-                    <span class="update-game"><i class="fas fa-crosshairs"></i> Valorant</span>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">5 saat önce</span>
-                    <div class="update-content">
-                        <div class="update-title">CS2 Beta Sürümü Yayında</div>
-                        <div class="update-desc">CS2 için ilk public sürüm çıktı, test edebilirsiniz.</div>
-                    </div>
-                    <span class="update-game"><i class="fas fa-bomb"></i> CS2</span>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">12 saat önce</span>
-                    <div class="update-content">
-                        <div class="update-title">Roblox External Anti-Ban</div>
-                        <div class="update-desc">Yeni anti-ban sistemi eklendi, tespit edilme riski %0.</div>
-                    </div>
-                    <span class="update-game"><i class="fas fa-robot"></i> Roblox</span>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">1 gün önce</span>
-                    <div class="update-content">
-                        <div class="update-title">Discord Ödül Etkinliği</div>
-                        <div class="update-desc">Discord'da etkinlik başladı, premium çekilişi var!</div>
-                    </div>
-                    <span class="update-game"><i class="fab fa-discord"></i> Topluluk</span>
+                    <button class="cheat-download" onclick="downloadCheat('cs2')"><i class="fas fa-download"></i> İNDİR</button>
                 </div>
             </div>
         </div>
@@ -1348,8 +1407,8 @@
         <div class="comments-section">
             <div class="comments-header">
                 <div class="comments-title">
-                    <h2>KULLANICI <span style="color: #aaaaff;">YORUMLARI</span></h2>
-                    <p>Gerçek kullanıcı deneyimleri • 1.2K+ yorum</p>
+                    <h2><i class="fas fa-comments"></i> KULLANICI YORUMLARI</h2>
+                    <p>Gerçek kullanıcı deneyimleri • 2.5K+ yorum</p>
                 </div>
                 <button class="add-comment-btn" onclick="addComment()">
                     <i class="fas fa-plus"></i> Yorum Yap
@@ -1358,30 +1417,6 @@
 
             <div class="comments-grid" id="commentsGrid">
                 <!-- Yorumlar JavaScript ile doldurulacak -->
-            </div>
-        </div>
-
-        <!-- İstatistikler -->
-        <div class="stats-showcase">
-            <div class="stat-card">
-                <i class="fas fa-users"></i>
-                <div class="number">45.2K</div>
-                <div class="label">Aktif Kullanıcı</div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-download"></i>
-                <div class="number">128K</div>
-                <div class="label">Toplam İndirme</div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-shield-alt"></i>
-                <div class="number">98%</div>
-                <div class="label">Güvenlik Oranı</div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-comment"></i>
-                <div class="number">1.2K</div>
-                <div class="label">Kullanıcı Yorumu</div>
             </div>
         </div>
 
@@ -1403,7 +1438,8 @@
                         <li><a href="#">Valorant</a></li>
                         <li><a href="#">Roblox</a></li>
                         <li><a href="#">CS2</a></li>
-                        <li><a href="#">Diğer Oyunlar</a></li>
+                        <li><a href="#">Fortnite</a></li>
+                        <li><a href="#">PUBG</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1435,10 +1471,13 @@
         // ===== ÜYELİK SİSTEMİ =====
         let currentUser = null;
         let comments = [];
+        let links = [];
 
         // Sayfa yüklendiğinde
         window.onload = function() {
             loadComments();
+            loadLinks();
+            loadContentLists();
             const savedUser = localStorage.getItem('ranger_user');
             if (savedUser) {
                 currentUser = JSON.parse(savedUser);
@@ -1462,7 +1501,7 @@
                     level: users[username].level || 5,
                     downloads: users[username].downloads || 0,
                     comments: users[username].comments || 0,
-                    days: users[username].days || 15,
+                    links: users[username].links || 0,
                     avatar: users[username].avatar || null
                 };
                 localStorage.setItem('ranger_user', JSON.stringify(currentUser));
@@ -1493,7 +1532,7 @@
                 level: 1,
                 downloads: 0,
                 comments: 0,
-                days: 30,
+                links: 0,
                 avatar: null
             };
 
@@ -1505,7 +1544,7 @@
                 level: 1,
                 downloads: 0,
                 comments: 0,
-                days: 30,
+                links: 0,
                 avatar: null
             };
             localStorage.setItem('ranger_user', JSON.stringify(currentUser));
@@ -1553,7 +1592,7 @@
             document.getElementById('profileLevel').textContent = 'Seviye ' + (currentUser.level || 1);
             document.getElementById('profileDownloads').textContent = currentUser.downloads || 0;
             document.getElementById('profileComments').textContent = currentUser.comments || 0;
-            document.getElementById('profileDays').textContent = currentUser.days || 30;
+            document.getElementById('profileLinks').textContent = currentUser.links || 0;
 
             const avatar = document.getElementById('profileAvatar');
             if (currentUser.avatar) {
@@ -1569,43 +1608,164 @@
             panel.style.display = 'flex';
         }
 
-        // Yorumları yükle
+        // Link ekleme modalı
+        function showLinkModal() {
+            if (!currentUser) {
+                alert('Link eklemek için giriş yapmalısınız!');
+                showLoginModal();
+                return;
+            }
+            
+            document.getElementById('linkUrl').value = '';
+            document.getElementById('linkUrl').focus();
+        }
+
+        // Link ekle
+        function addLink() {
+            if (!currentUser) {
+                alert('Link eklemek için giriş yapmalısınız!');
+                showLoginModal();
+                return;
+            }
+
+            const url = document.getElementById('linkUrl').value;
+            const category = document.getElementById('linkCategory').value;
+
+            if (!url) {
+                alert('Lütfen bir link girin!');
+                return;
+            }
+
+            const newLink = {
+                user: currentUser.username,
+                url: url,
+                category: category,
+                time: 'Şimdi',
+                downloads: 0
+            };
+
+            links.unshift(newLink);
+            
+            // Kullanıcının link sayısını artır
+            currentUser.links = (currentUser.links || 0) + 1;
+            localStorage.setItem('ranger_user', JSON.stringify(currentUser));
+            
+            // Linkleri yenile
+            loadLinks();
+            
+            document.getElementById('linkUrl').value = '';
+            alert('Linkiniz eklendi! Admin onayından sonra yayınlanacaktır.');
+            updateProfileDisplay();
+        }
+
+        // Linkleri yükle
+        function loadLinks() {
+            const sampleLinks = [
+                { user: 'Mehmet_34', url: 'dosya.co/valorant_v4', category: 'Valorant', time: '5 dk önce', downloads: 24 },
+                { user: 'Ayşe_Yılmaz', url: 'mediafire.com/roblox_ext', category: 'Roblox', time: '12 dk önce', downloads: 18 },
+                { user: 'Can_Baba', url: 'drive.google.com/cs2_hile', category: 'CS2', time: '23 dk önce', downloads: 32 },
+                { user: 'Zeynep_K', url: 'dosya.co/fortnite_aim', category: 'Fortnite', time: '34 dk önce', downloads: 12 }
+            ];
+
+            const container = document.getElementById('recentLinks');
+            container.innerHTML = '';
+            
+            sampleLinks.forEach(link => {
+                const linkEl = document.createElement('div');
+                linkEl.className = 'recent-item';
+                linkEl.innerHTML = `
+                    <div class="recent-icon"><i class="fas fa-link"></i></div>
+                    <div class="recent-info">
+                        <h4>${link.url.substring(0, 25)}...</h4>
+                        <p><i class="fas fa-user"></i> ${link.user} • ${link.time} • <i class="fas fa-download"></i> ${link.downloads}</p>
+                    </div>
+                `;
+                container.appendChild(linkEl);
+            });
+        }
+
+        // İçerik listelerini yükle
+        function loadContentLists() {
+            const premiumList = document.getElementById('premiumList');
+            premiumList.innerHTML = `
+                <li><a href="#"><i class="fas fa-crown"></i> Valorant V4 Premium</a> <span>YENİ</span></li>
+                <li><a href="#"><i class="fas fa-crown"></i> CS2 Ragebot V2</a> <span>5.2K</span></li>
+                <li><a href="#"><i class="fas fa-crown"></i> Roblox External+</a> <span>3.8K</span></li>
+                <li><a href="#"><i class="fas fa-crown"></i> Fortnite Aimbot Pro</a> <span>2.1K</span></li>
+            `;
+
+            const popularList = document.getElementById('popularList');
+            popularList.innerHTML = `
+                <li><a href="#"><i class="fas fa-fire"></i> Valorant V4</a> <span>15K</span></li>
+                <li><a href="#"><i class="fas fa-fire"></i> Roblox External</a> <span>12K</span></li>
+                <li><a href="#"><i class="fas fa-fire"></i> CS2 Ragebot</a> <span>11K</span></li>
+                <li><a href="#"><i class="fas fa-fire"></i> PUBG ESP</a> <span>8K</span></li>
+            `;
+
+            const newList = document.getElementById('newList');
+            newList.innerHTML = `
+                <li><a href="#"><i class="fas fa-bolt"></i> Valorant V4.2 Beta</a> <span>YENİ</span></li>
+                <li><a href="#"><i class="fas fa-bolt"></i> CS2 Wallhack V3</a> <span>2 SAAT</span></li>
+                <li><a href="#"><i class="fas fa-bolt"></i> Roblox Speed Hack</a> <span>5 SAAT</span></li>
+                <li><a href="#"><i class="fas fa-bolt"></i> Fortnite Aimbot</a> <span>12 SAAT</span></li>
+            `;
+        }
+
+        // Yorumları yükle (Türk isimleriyle)
         function loadComments() {
             comments = [
                 {
-                    user: 'ShadowHunter',
+                    user: 'Mehmet Yılmaz',
                     badge: 'PREMIUM',
                     avatar: 'https://i.pravatar.cc/150?img=1',
-                    comment: 'Valorant hilesi gerçekten çok iyi çalışıyor. 2 aydır kullanıyorum hiç ban yemedim. Aimbot çok smooth.',
+                    comment: 'Valorant hilesi gerçekten çok iyi çalışıyor. 3 aydır kullanıyorum hiç ban yemedim. Aimbot çok smooth, özellikle silent aim harika. Emeğinize sağlık arkadaşlar.',
                     time: '2 saat önce',
-                    likes: 24,
+                    likes: 45,
                     game: 'Valorant'
                 },
                 {
-                    user: 'RobloxKing',
+                    user: 'Ayşe Demir',
                     badge: 'VIP',
                     avatar: 'https://i.pravatar.cc/150?img=2',
-                    comment: 'Roblox external mükemmel! ESP çok net çalışıyor. Kurulumu çok basit, herkese tavsiye ederim.',
+                    comment: 'Roblox external mükemmel! ESP çok net çalışıyor, duvar arkasını resmen gösteriyor. Kurulumu çok basit, herkese tavsiye ederim. Discord sunucusu da çok aktif.',
                     time: '5 saat önce',
-                    likes: 18,
+                    likes: 32,
                     game: 'Roblox'
                 },
                 {
-                    user: 'CS2Pro',
+                    user: 'Can Kara',
                     badge: 'MODERATÖR',
                     avatar: 'https://i.pravatar.cc/150?img=3',
-                    comment: 'CS2 hilesi yeni çıktı ama şimdiden çok iyi. Triggerbot anında tepki veriyor. Emeğinize sağlık.',
+                    comment: 'CS2 hilesi yeni çıktı ama şimdiden çok iyi. Triggerbot anında tepki veriyor, wallhack çok net. VAC koruması sağlam, denedim sorun yok. Herkese duyurulur.',
                     time: '8 saat önce',
-                    likes: 32,
+                    likes: 67,
                     game: 'CS2'
                 },
                 {
-                    user: 'GameMaster',
+                    user: 'Zeynep Aydın',
                     badge: 'ÜYE',
                     avatar: 'https://i.pravatar.cc/150?img=4',
-                    comment: 'Discord sunucusu çok aktif, anında yardım alabiliyorsunuz. Site tasarımı da çok profesyonel olmuş.',
+                    comment: 'Fortnite hilesini denedim, aimbot gerçekten çok iyi. Hiç lag yapmıyor, FPS düşmüyor. Link paylaşımı da çok kolay olmuş, herkes dosya ekleyebiliyor.',
                     time: '12 saat önce',
-                    likes: 15,
+                    likes: 28,
+                    game: 'Fortnite'
+                },
+                {
+                    user: 'Ali Öztürk',
+                    badge: 'PREMIUM',
+                    avatar: 'https://i.pravatar.cc/150?img=5',
+                    comment: 'PUBG hilesi de eklenmiş, denedim çalışıyor. ESP çok net, araç mesafelerini gösteriyor. Anti-ban sağlam, 1 haftadır sorunsuz kullanıyorum.',
+                    time: '1 gün önce',
+                    likes: 51,
+                    game: 'PUBG'
+                },
+                {
+                    user: 'Fatma Şahin',
+                    badge: 'VIP',
+                    avatar: 'https://i.pravatar.cc/150?img=6',
+                    comment: 'Site tasarımı çok profesyonel olmuş. Kategoriler çok iyi düzenlenmiş, aradığımı hemen buluyorum. Link ekleme özelliği de çok kullanışlı.',
+                    time: '1 gün önce',
+                    likes: 19,
                     game: 'Genel'
                 }
             ];
@@ -1658,7 +1818,7 @@
             const commentText = prompt("Yorumunuzu yazın:");
             if (!commentText) return;
 
-            const game = prompt("Hangi oyun için? (Valorant/Roblox/CS2/Genel)");
+            const game = prompt("Hangi oyun için? (Valorant/Roblox/CS2/Fortnite/PUBG/Genel)");
             
             const newComment = {
                 user: currentUser.username,
@@ -1705,6 +1865,26 @@
             
             updateProfileDisplay();
             alert('Yorumunuz eklendi!');
+        }
+
+        // Kategori filtrele
+        function filterCategory(category) {
+            alert(category.toUpperCase() + ' kategorisi filtrelendi!');
+        }
+
+        // Hile indir
+        function downloadCheat(game) {
+            if (!currentUser) {
+                alert('İndirmek için giriş yapmalısınız!');
+                showLoginModal();
+                return;
+            }
+            
+            currentUser.downloads = (currentUser.downloads || 0) + 1;
+            localStorage.setItem('ranger_user', JSON.stringify(currentUser));
+            updateProfileDisplay();
+            
+            alert(game.toUpperCase() + ' hilesi indiriliyor...');
         }
     </script>
 </body>
